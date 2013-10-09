@@ -7,19 +7,19 @@ feature "EditAPost" do
     #Given a post exists
     post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
 
-
+    visit post_path(post)
 
     #When a post is edited
-    visit post_path(post)
+
     click_on("Edit")
 
     fill_in 'Title', with: 'Becoming a Fellow Code'
 
-    click_on("Submit")
+    click_on "Update Post"
 
     #Then the changes are saved
 
-    visit post_path(post)
+    page.text.must_include "Post was successfully updated"
     page.text.must_include 'Becoming a Fellow Code'
 
   end

@@ -12,24 +12,21 @@ feature "creating a post" do
 
 
     #given a completed post form
-    visit new_posts_path
+    visit new_post_path
 
 
-    fill_in 'Title', with: 'arb title'
-    fill_in 'Content', with: 'long time ago far far away'
+    fill_in 'Title', with: 'Code Rails'
+    fill_in 'Body', with: 'This is how I learned to make Rails apps.'
 
     #when I submit the form
-    click_on "Create Post"
+    click_on 'Create Post'
 
 
 
     #then I should see the post
-    page.text.must_include 'arb title'
-    page.text.must_include 'long time ago far far away'
 
-
-    # and message success
-    page.text.must_include 'Posted was successfully created'
+    page.text.must_include 'Post was successfully created'
+    page.text.must_include 'how I learned to make Rails apps'
 
 
   end

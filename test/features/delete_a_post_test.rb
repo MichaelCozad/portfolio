@@ -18,6 +18,6 @@ feature "DeleteAPost" do
     #Then the index page will not have Post
 
 
-    page.text_wont_include "Becoming a Code Fellow"
+    page.wont_have_content "Becoming a Code Fellow"
   end
 end
