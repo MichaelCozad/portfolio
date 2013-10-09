@@ -12,8 +12,8 @@ feature "creating a post" do
 
 
     #given a completed post form
-    visit posts_path
-    click_on("New Post")
+    visit new_posts_path
+
 
     fill_in 'Title', with: 'arb title'
     fill_in 'Content', with: 'long time ago far far away'
