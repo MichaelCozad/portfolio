@@ -5,7 +5,7 @@ feature "VisitThePostIndex" do
 
 
     #Given someone created a Post
-    Post.create(title: posts(:cf).title, body: posts(:cf).body)
+    Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence")
 
 
     #When someone visits the Posts Index
@@ -16,7 +16,7 @@ feature "VisitThePostIndex" do
     #  Then I should see the posts
 
 
-    page.text.must_include posts(:cf).title
+    page.text.must_include "Becoming a Code Fellow"
 
   end
 end
