@@ -5,7 +5,7 @@ feature "DeleteAPost" do
 
 
     #Given a user visits the Posts Index page
-    post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
+    Post.create(title: posts(:cf).title, body: posts(:cf).body)
 
     visit posts_path
 
@@ -18,6 +18,6 @@ feature "DeleteAPost" do
     #Then the index page will not have Post
 
 
-    page.wont_have_content "Becoming a Code Fellow"
+    page.wont_have_content posts(:cf).title
   end
 end

@@ -15,8 +15,8 @@ feature "creating a post" do
     visit new_post_path
 
 
-    fill_in 'Title', with: 'Code Rails'
-    fill_in 'Body', with: 'This is how I learned to make Rails apps.'
+    fill_in 'Title', with: posts(:cr).title
+    fill_in 'Body',  with: posts(:cr).body
 
     #when I submit the form
     click_on 'Create Post'
@@ -26,7 +26,7 @@ feature "creating a post" do
     #then I should see the post
 
     page.text.must_include 'Post was successfully created'
-    page.text.must_include 'how I learned to make Rails apps'
+    page.text.must_include posts(:cr).title
 
 
   end

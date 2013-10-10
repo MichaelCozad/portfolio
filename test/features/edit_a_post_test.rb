@@ -5,7 +5,7 @@ feature "EditAPost" do
 
 
     #Given a post exists
-    post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence.")
+    post = Post.create(title: posts(:cf).title, body: posts(:cf).body)
 
     visit post_path(post)
 
@@ -13,14 +13,14 @@ feature "EditAPost" do
 
     click_on("Edit")
 
-    fill_in 'Title', with: 'Becoming a Fellow Code'
+    fill_in 'Title', with: posts(:cf).title
 
     click_on "Update Post"
 
     #Then the changes are saved
 
     page.text.must_include "Post was successfully updated"
-    page.text.must_include 'Becoming a Fellow Code'
+    page.text.must_include posts(:cf).title
 
   end
 end
