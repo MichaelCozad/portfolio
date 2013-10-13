@@ -1,22 +1,21 @@
-# require "test_helper"
+require "test_helper"
 
-# feature "CheckForBootstrap" do
-#   scenario "check for bootstrap loading on the Root Path" do
-
-
-#     #Given bootstrap is installed
+feature "CheckForBootstrap" do
+  scenario "check for bootstrap loading on the Root Path" do
 
 
-
-#     #When I visit the root path
-#     visit root_path
+    #Given bootstrap is installed
 
 
-#     #Then I have Bootstrap features
+
+    #When I visit the root path
+    visit root_path
 
 
-#     page.body.must_include "col-"
+    #Then I have Bootstrap features
+
+    page.has_css?('col-')
 
 
-#   end
-# end
+  end
+end
