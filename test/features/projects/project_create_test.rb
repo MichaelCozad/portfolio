@@ -17,9 +17,9 @@ feature "As a site owner, I want to add a portfolio item" do
 
 
   #Then the project information should show
-  page.text.must_have "Project was successfully added"
-  page.text.must_have "Faceblock"
-  page.text.must_have "Rails"
+  page.text.must_include "Project was successfully added"
+  page.text.must_include "Faceblock"
+  page.text.must_include "Rails"
 
   end
 end

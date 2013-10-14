@@ -11,7 +11,7 @@ end
 def create
   @project = Project.new(params[:project])
   if @project.save
-    flash[:notice] = "Project has been created."
+    flash[:notice] = "Project was successfully added"
     redirect_to @project
   else
    # [TODO]
@@ -19,7 +19,7 @@ def create
 end
 
 def show
-
+  @project = Project.find(params[:id])
 end
 
 
