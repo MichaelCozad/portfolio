@@ -12,7 +12,7 @@ feature "As a site owner, I want to add a portfolio item" do
   fill_in "Technologies used", with: "Rails, Ruby, Bootstrap, HTML5, CSS3"
 
   #When the user submits project information
-  click_on "Create project"
+  click_on "Create Project"
 
 
 

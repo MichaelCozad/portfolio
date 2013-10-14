@@ -14,7 +14,7 @@ def create
     flash[:notice] = "Project was successfully added"
     redirect_to @project
   else
-   # [TODO]
+    flash[:alert] = "Project could not be saved"
   end
 end
 
