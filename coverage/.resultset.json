@@ -16,6 +16,12 @@
       "/Users/administrator/rails/portfolio/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/administrator/rails/portfolio/app/helpers/application_helper.rb": [
@@ -205,8 +211,14 @@
         null,
         null,
         null
+      ],
+      "/Users/administrator/rails/portfolio/app/controllers/users_controller.rb": [
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1381880274
+    "timestamp": 1381901708
   }
 }
