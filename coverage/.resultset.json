@@ -5,6 +5,7 @@
         1,
         null,
         null,
+        null,
         1,
         null,
         null,
@@ -18,7 +19,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null,
@@ -211,14 +212,8 @@
         null,
         null,
         null
-      ],
-      "/Users/administrator/rails/portfolio/app/controllers/users_controller.rb": [
-        1,
-        null,
-        null,
-        null
       ]
     },
-    "timestamp": 1381901708
+    "timestamp": 1381944808
   }
 }
