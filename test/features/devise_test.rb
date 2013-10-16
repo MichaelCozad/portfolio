@@ -42,28 +42,21 @@ feature "I want to use Devise to restrict access to the site" do
   end
 
 
-  # scenario "I want to sign in with an existing user" do
+  scenario "I want to sign in with an existing user" do
 
   #Given an existing user
-  # visit root_path
-  # click_on "Sign Up"
-  # fill_in "Email", with: users(:one).email
-  # fill_in "Password", with: users(:one).encrypted_password
-  # fill_in "Password confirmation", with: users(:one).encrypted_password
-  # click_on "Sign up"
-  # click_on "Sign out"
+  @user = users(:one)
+  visit new_user_session_path
+  fill_in "Email",  with: users(:one).email
+  fill_in "Password", with: users(:one).encrypted_password
 
-  # #When I click sign in
-  # click_on "Sign In"
+  #When I click sign in
+  click_button "Sign in"
 
-  # fill_in "Email", with: users(:one).email
-  # fill_in "Password", with: users(:one).encrypted_password
+  #Then I should see
+  page.text.must_include "FRANKENFIELD"
 
-  # click_on "Sign in"
-  # #Then I should see
-  # page.text.must_include "Sign out"
-
-  # end
+  end
 
 
 
