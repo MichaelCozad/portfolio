@@ -48,7 +48,7 @@ feature "I want to use Devise to restrict access to the site" do
   @user = users(:one)
   visit new_user_session_path
   fill_in "Email",  with: users(:one).email
-  fill_in "Password", with: users(:one).encrypted_password
+  fill_in "Password", with: "password"
 
   #When I click sign in
   click_button "Sign in"

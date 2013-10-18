@@ -36,6 +36,10 @@ group :development, :test do
   gem 'launchy'
 end
 
+group :test do
+  gem 'turn'
+end
+
 group :production do
   gem 'pg', '0.12.2'
   gem 'rails_12factor'

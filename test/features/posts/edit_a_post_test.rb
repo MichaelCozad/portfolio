@@ -5,9 +5,12 @@ feature "EditAPost" do
 
 
     #Given a post exists
-    post = Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence")
+    visit new_user_session_path
+    fill_in "Email", with: users(:one).email
+    fill_in "Password", with: "password"
+    click_button "Sign in"
 
-    visit post_path(post)
+    visit post_path(posts(:cr))
 
     #When a post is edited
 
