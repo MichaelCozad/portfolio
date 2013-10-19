@@ -65,15 +65,15 @@ scenario "Visitors should be able to read all posts" do
   end
 
 
-  scenario "Visitors should only be able to see published posts" do
-  #Given a user is signed in as an visitor
-  visit new_user_session_path
-    fill_in "Email", with: users(:three).email
-    fill_in "Password", with: "password"
-    click_button "Sign in"
-  #When
+  # scenario "Visitors should only be able to see published posts" do
+  # #Given a user is signed in as an visitor
+  # visit new_user_session_path
+  #   fill_in "Email", with: users(:three).email
+  #   fill_in "Password", with: "password"
+  #   click_button "Sign in"
+  # #When
 
-  #Then
+  # #Then
 
   end
 

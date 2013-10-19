@@ -25,8 +25,14 @@ feature "I want to use Pundit to restrict access to the site" do
     fill_in "Password", with: "password"
     click_button "Sign in"
   #When they update a post
+  visit post_path(posts(:pfauthor))
+  click_on("Edit")
 
-  #Then
+  fill_in 'Title', with: "Odoyle doesnt rule"
+
+  click_on "Update Post"
+  #Then the post should be updated
+  page.text.must_include "Post was successfully updated"
 
   end
 
@@ -51,6 +57,7 @@ feature "I want to use Pundit to restrict access to the site" do
     fill_in "Password", with: "password"
     click_button "Sign in"
   #When they try to delete a post
+  visit posts_path
   page.find("tr:last").click_on "Destroy"
   #Then
   page.text.must_include 'not authorized'
