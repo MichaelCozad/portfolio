@@ -10,7 +10,13 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
 
+  def author?
+    role == 'author'
+  end
 
+  def editor?
+    role == 'editor'
+  end
 
 
 end
