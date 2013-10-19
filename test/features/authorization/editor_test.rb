@@ -62,7 +62,7 @@ feature "I want to use Pundit to restrict access to the site" do
 
   # #Then the post will be published
 
-  end
+  #end
 
 
   scenario "Editors should be able to delete posts" do
