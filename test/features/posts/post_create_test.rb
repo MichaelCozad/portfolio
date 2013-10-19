@@ -15,8 +15,8 @@ feature "creating a post" do
     visit new_post_path
 
 
-    fill_in 'Title', with: posts(:cr).title
-    fill_in 'Body',  with: posts(:cr).body
+    fill_in 'Title', with: posts(:peditor).title
+    fill_in 'Body',  with: posts(:peditor).body
 
     #when I submit the form
     click_on 'Create Post'
@@ -26,7 +26,7 @@ feature "creating a post" do
     #then I should see the post
 
     page.text.must_include 'Post was successfully created'
-    page.text.must_include posts(:cr).title
+    page.text.must_include posts(:peditor).title
     assert page.has_css? "#author"
     page.text.must_include users(:one).email
 

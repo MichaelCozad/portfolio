@@ -10,7 +10,7 @@ feature "EditAPost" do
     fill_in "Password", with: "password"
     click_button "Sign in"
 
-    visit post_path(posts(:cr))
+    visit post_path(posts(:peditor))
 
     #When a post is edited
 

@@ -4,11 +4,14 @@
  #title: Becoming a Code Fellow
  #body: Means striving for excellence
 
-cr:
- title: Code Rails
- body: This is how I learned web development!
+peditor:
+ title: Odoyle Rules
+ body: Odoyle Rules!
  author: one
 
-#  one:
-#  name: Theyrejunky
-#  technologies_used: I hate fixtures
+
+pfauthor:
+ title: Authors Rule
+ body: This is how I learned web development!
+ author: two
+

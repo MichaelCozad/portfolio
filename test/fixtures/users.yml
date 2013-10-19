@@ -8,7 +8,14 @@
 one:
   email: test1@bmail.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: editor
 
 two:
   email: test2@yahoo.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: author
+
+three:
+  email: test3@yahoo.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  role: visitor

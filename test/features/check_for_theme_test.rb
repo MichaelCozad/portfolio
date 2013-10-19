@@ -14,7 +14,7 @@ feature "CheckForTheme" do
 
     #Then I have Bootstrap features
 
-    page.has_css?('feature_slider')
+    assert page.has_css?('feature_slider')
 
 
   end
