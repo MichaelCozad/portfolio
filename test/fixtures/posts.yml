@@ -8,10 +8,11 @@ peditor:
  title: Odoyle Rules
  body: Odoyle Rules!
  author: one
+ published: true
 
 
 pfauthor:
  title: Authors Rule
  body: This is how I learned web development!
  author: two
-
+ published: true
