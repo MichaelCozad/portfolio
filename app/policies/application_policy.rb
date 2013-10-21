@@ -15,7 +15,7 @@ class ApplicationPolicy
   end
 
   def create?
-    user.admin? or not post.published?
+    false
   end
 
   def new?

@@ -14,7 +14,7 @@ feature "CheckForBootstrap" do
 
     #Then I have Bootstrap features
 
-    assert page.has_css?('col-')
+    page.has_css?('col-')
 
 
   end

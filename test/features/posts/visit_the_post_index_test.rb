@@ -5,9 +5,10 @@ feature "VisitThePostIndex" do
 
 
     #Given someone created a Post
-    Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence")
-
-
+    visit new_user_session_path
+    fill_in "Email", with: users(:one).email
+    fill_in "Password", with: "password"
+    click_button "Sign in"
     #When someone visits the Posts Index
     visit posts_path
 
@@ -16,7 +17,7 @@ feature "VisitThePostIndex" do
     #  Then I should see the posts
 
 
-    page.text.must_include "Becoming a Code Fellow"
+    page.text.must_include "Odoyle Rules"
 
   end
 end

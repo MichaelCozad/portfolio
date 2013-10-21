@@ -3,16 +3,16 @@ require 'test_helper'
 feature "I want to use Pundit to restrict access to the site" do
 
   scenario "Editors should be able to see all posts" do
-  #Given a user is signed in as an visitor
+  #Given a user is signed in as an editor
   visit new_user_session_path
     fill_in "Email", with: users(:one).email
     fill_in "Password", with: "password"
     click_button "Sign in"
   #When
   visit posts_path
+
+  #Then the most recent post is available
   page.find("tr:last")
-  #Then
-  page.text.must_include("tr:last").title
 
   end
 
@@ -73,11 +73,11 @@ feature "I want to use Pundit to restrict access to the site" do
     click_button "Sign in"
   #When they try to delete a post
   visit posts_path
-  page.find("tr:last").click_on "Destroy"
 
+  click_link "Destroy"
   #Then the post should be deleted
 
-  page.text.wont_include("tr:last").title
+  page.text.wont_include "Odoyle Rules"
   end
 
 

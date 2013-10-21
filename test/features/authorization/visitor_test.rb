@@ -8,11 +8,11 @@ scenario "Visitors should be able to read all posts" do
     fill_in "Email", with: users(:zoo).email
     fill_in "Password", with: "password"
     click_button "Sign in"
-  #When
+  #When they visit index
   visit posts_path
+
+  #Then the most recent post is available
   page.find("tr:last")
-  #Then
-  page.text.must_include("tr:last").title
   end
 
 
@@ -22,11 +22,11 @@ scenario "Visitors should be able to read all posts" do
     fill_in "Email", with: users(:zoo).email
     fill_in "Password", with: "password"
     click_button "Sign in"
-  #When
+  #When they visit posts index
   visit posts_path
-  page.find("tr:last").click_on "Destroy"
-  #Then
-  page.text.must_include 'not authorized'
+
+  #Then the button wont be there
+  page.text.wont_include "Destroy"
   end
 
 
@@ -37,15 +37,11 @@ scenario "Visitors should be able to read all posts" do
     fill_in "Password", with: "password"
     click_button "Sign in"
   #When they try to edit a post
-  visit post_path(posts(:peditor))
-  click_on("Edit")
+  visit posts_path
 
-  fill_in 'Title', with: "Odoyle doesnt rule"
-
-  click_on "Update Post"
 
   #Then they won't be authorized
-  page.text.must_include 'not authorized'
+  page.text.wont_include 'Edit'
   end
 
 
@@ -57,8 +53,8 @@ scenario "Visitors should be able to read all posts" do
     click_button "Sign in"
   #When they try to create a new post
   visit new_post_path
-    fill_in 'Title', with: posts(:peditor).title
-    fill_in 'Body',  with: posts(:peditor).body
+    fill_in 'Title', with: "Some Data"
+    fill_in 'Body',  with: "Some more Data"
     click_on 'Create Post'
   #Then they won't be authorized
   page.text.must_include 'not authorized'

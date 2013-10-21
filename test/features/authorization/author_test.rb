@@ -58,9 +58,9 @@ feature "I want to use Pundit to restrict access to the site" do
     click_button "Sign in"
   #When they try to delete a post
   visit posts_path
-  page.find("tr:last").click_on "Destroy"
-  #Then
-  page.text.must_include 'not authorized'
+
+  #Then the button wont be there
+  page.text.wont_include "Delete"
   end
 
 

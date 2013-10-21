@@ -5,19 +5,21 @@ feature "DeleteAPost" do
 
 
     #Given a user visits the Posts Index page
-    Post.create(title: "Becoming a Code Fellow", body: "Means striving for excellence")
-
+    visit new_user_session_path
+    fill_in "Email", with: users(:one).email
+    fill_in "Password", with: "password"
+    click_button "Sign in"
     visit posts_path
 
 
     #When user click the destroy post link
 
-    page.find("tr:last").click_on "Destroy"
+   click_link "Destroy"
 
 
     #Then the index page will not have Post
 
-    page.wont_have_content "Becoming a Code Fellow"
+    page.wont_have_content "Odoyle Rules"
 
   end
 end
