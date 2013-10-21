@@ -14,8 +14,11 @@ attr_reader :user, :post
   end
   alias_method :update?, :create?
 
+
   def update?
-   user.editor?
+   if user.present?
+     user.editor? || user.author?
+   end
   end
 
 

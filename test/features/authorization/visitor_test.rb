@@ -37,11 +37,14 @@ scenario "Visitors should be able to read all posts" do
     fill_in "Password", with: "password"
     click_button "Sign in"
   #When they try to edit a post
-  visit posts_path
+  visit post_path(posts(:peditor))
+  click_on("Edit")
+  fill_in 'Title', with: "Odoyle doesnt rule"
 
+  click_on "Update Post"
 
   #Then they won't be authorized
-  page.text.wont_include 'Edit'
+  page.text.must_include 'not authorized'
   end
 
 

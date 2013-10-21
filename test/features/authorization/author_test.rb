@@ -28,7 +28,7 @@ feature "I want to use Pundit to restrict access to the site" do
   visit post_path(posts(:pfauthor))
   click_on("Edit")
 
-  fill_in 'Title', with: "Odoyle doesnt rule"
+  fill_in 'Body', with: "This is how I learned web development"
 
   click_on "Update Post"
   #Then the post should be updated
