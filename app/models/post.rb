@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 
   attr_accessible :body, :title, :published
 
+  scope :published, where(published: true)
 
   def publish!
     published = true

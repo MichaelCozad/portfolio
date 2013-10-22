@@ -9,6 +9,7 @@ attr_reader :user, :post
 
   def create?
    if user.present?
+   # return true if user.id == post.author_id
    user.editor? || user.author?
    end
   end
@@ -17,6 +18,7 @@ attr_reader :user, :post
 
   def update?
    if user.present?
+   # return true if user.id == post.author_id
      user.editor? || user.author?
    end
   end

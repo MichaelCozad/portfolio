@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @post.comments.new(params[:comment])
       if @comment.save
+        #current_user.comments << @comment
         redirect_to post_path(@post), notice: "Comment created."
       else
         redirect_to new_post_comment_path(@post)
