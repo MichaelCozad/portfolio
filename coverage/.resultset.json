@@ -69,6 +69,16 @@
         1,
         null
       ],
+      "/Users/administrator/rails/portfolio/app/controllers/comments_controller.rb": [
+        1,
+        null
+      ],
+      "/Users/administrator/rails/portfolio/app/models/comment.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/administrator/rails/portfolio/app/controllers/home_controller.rb": [
         1,
         null,
@@ -108,11 +118,11 @@
         null,
         null,
         1,
-        11,
+        12,
         null,
-        11,
-        11,
-        11,
+        12,
+        12,
+        12,
         null,
         null,
         null,
@@ -353,6 +363,6 @@
         null
       ]
     },
-    "timestamp": 1382389542
+    "timestamp": 1382397270
   }
 }

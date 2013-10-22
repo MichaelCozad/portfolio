@@ -1,0 +1,5 @@
+<h1>Comments for <%= link_to @post.title, @post %></h1>
+
+<%= render 'comm' %>
+
+<p><%= link_to "New Comment", new_post_comment_path(@post)  %>

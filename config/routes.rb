@@ -1,5 +1,9 @@
 Portfolio::Application.routes.draw do
-  resources :comments
+  get "comments/index"
+
+  get "comments/new"
+
+
 
 
   devise_for :users
@@ -11,7 +15,11 @@ Portfolio::Application.routes.draw do
 
 
 
-  resources :posts
+  resources :posts do
+
+    resources :comments
+
+  end
 
 
   resources :projects
