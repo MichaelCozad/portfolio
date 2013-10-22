@@ -14,8 +14,8 @@ feature "DeleteAPost" do
 
     #When user click the destroy post link
 
-   click_link "Destroy"
-
+   #click_link "Destroy"
+   first(:link, "Destroy").click
 
     #Then the index page will not have Post
 

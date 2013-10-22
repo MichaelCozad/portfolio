@@ -74,7 +74,8 @@ feature "I want to use Pundit to restrict access to the site" do
   #When they try to delete a post
   visit posts_path
 
-  click_link "Destroy"
+  #click_link "Destroy"
+  first(:link, "Destroy").click
   #Then the post should be deleted
 
   page.text.wont_include "Odoyle Rules"
