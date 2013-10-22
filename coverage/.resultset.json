@@ -54,8 +54,8 @@
         1,
         null,
         1,
-        29,
-        25,
+        30,
+        26,
         0,
         2,
         2,
@@ -71,12 +71,43 @@
       ],
       "/Users/administrator/rails/portfolio/app/controllers/comments_controller.rb": [
         1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        null,
         null
       ],
       "/Users/administrator/rails/portfolio/app/models/comment.rb": [
         1,
         1,
         1,
+        null,
+        null,
         null
       ],
       "/Users/administrator/rails/portfolio/app/controllers/home_controller.rb": [
@@ -118,6 +149,8 @@
         null,
         null,
         1,
+        12,
+        12,
         12,
         null,
         12,
@@ -191,6 +224,7 @@
         null
       ],
       "/Users/administrator/rails/portfolio/app/models/post.rb": [
+        1,
         1,
         1,
         null,
@@ -363,6 +397,6 @@
         null
       ]
     },
-    "timestamp": 1382397270
+    "timestamp": 1382416300
   }
 }

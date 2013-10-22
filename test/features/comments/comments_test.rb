@@ -3,19 +3,18 @@ require 'test_helper'
 feature "CommentOnPosts" do
   scenario "I should be able to comment on individual blog posts" do
   #Given a comment was created on a post
-  visit post_path(posts(:peditor))  # OR NEW ROUTE
+  visit new_post_comment_path(posts(:peditor))
 
 
   fill_in "Content", with: "Tommy Boy Rules"
 
   click_on 'Create Comment'
-  #When I re-visit the post show page
-  visit post_path(posts(:peditor))  # OR NEW ROUTE
+  #When I get redirected to the post show page
 
 
   #Then I should see the post's comment
 
-  page.text.must_include 'Tommy Boy Rules'
+  page.text.must_include 'Comment created'
 
   end
 
