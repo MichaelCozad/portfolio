@@ -1,8 +1,10 @@
 class CommentsController < ApplicationController
-  before_filter :set_post
+  before_filter :load_commentable
 
   def index
-    @comments = @post.comments
+
+    @comments = @commentable.comments
+
   end
 
 
@@ -25,8 +27,9 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_post
-    @post = Post.find(params[:post_id])
+  def load_commentable
+    resource, id = request.path.split('/')[1,2]
+    @commentable = resource.singularize.classify.constantize.find(id)
   end
 
 end

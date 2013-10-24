@@ -16,13 +16,13 @@ Portfolio::Application.routes.draw do
 
 
   resources :posts do
-
     resources :comments
-
   end
 
 
-  resources :projects
+  resources :projects do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
