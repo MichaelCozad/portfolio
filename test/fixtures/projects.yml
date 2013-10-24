@@ -1,8 +1,8 @@
 
-one:
+projed:
  name: Code Fellows Portfolio
  technologies_used: Rails
-
+ author: one
 
 two:
  name: Project Name Two

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-feature "CommentOnPosts" do
+feature "CommentOn" do
   scenario "I should be able to comment on individual blog posts" do
   #Given a comment was created on a post
   visit new_post_comment_path(posts(:peditor))
@@ -34,9 +34,17 @@ feature "CommentOnPosts" do
 
   # end
 
+  scenario "I should be able to comment on individual blog posts" do
+  #Given a comment was created on a post
+  visit new_post_comment_path(projects(:projed))
 
 
+  fill_in "Content", with: "Tommy Boy Rules"
 
+  #When I get redirected to the post show page
+  click_on 'Create Comment'
 
-
+  #Then I should see the post's comment
+  page.text.must_include 'Comment created'
+  end
 end
