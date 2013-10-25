@@ -7,17 +7,9 @@ attr_reader :user, :comment
   end
 
 
-  def create?
-   user.author? || user.editor? if user.present?
-  end
-
-
-
   def update?
     post.authored_by?(user) || user.editor? if user.present?
   end
-  alias_method :destroy?, :update?
-
 
 
   def publish?
@@ -29,8 +21,6 @@ attr_reader :user, :comment
     def resolve
       if user.present? && user.editor?
         scope.all
-      elsif user.present? && user.author?
-        scope.where(author_id: user.id) | scope.published
       else
         scope.where(published: true)
       end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131024041703) do
+ActiveRecord::Schema.define(:version => 20131025021027) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -26,7 +26,10 @@ ActiveRecord::Schema.define(:version => 20131024041703) do
     t.datetime "updated_at",       :null => false
     t.integer  "commentable_id"
     t.string   "commentable_type"
+    t.boolean  "published"
   end
+
+  add_index "comments", ["published"], :name => "index_comments_on_published"
 
   create_table "homes", :force => true do |t|
     t.datetime "created_at", :null => false
