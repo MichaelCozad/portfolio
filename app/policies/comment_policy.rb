@@ -8,11 +8,16 @@ attr_reader :user, :comment
 
 
   def update?
-    post.authored_by?(user) || user.editor? if user.present?
+    user.editor? if user.present?
   end
 
 
   def publish?
+    user.editor? if user.present?
+  end
+
+
+  def destroy?
     user.editor? if user.present?
   end
 

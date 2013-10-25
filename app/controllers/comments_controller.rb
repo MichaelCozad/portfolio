@@ -2,9 +2,11 @@ class CommentsController < ApplicationController
   before_filter :load_commentable
 
   def index
-
-    @comments = @commentable.comments
-
+    if current_user
+      @comments = policy_scope(Comment)
+    else
+      @comments = @commentable.comments.where(published: true)
+    end
   end
 
 
@@ -23,12 +25,31 @@ class CommentsController < ApplicationController
   end
 
 
+  def update
+    @comment = Comment.find(params[:id])
+    @commentable = @comment.commentable
+    authorize @comment
+    if @comment.publish!
+      redirect_to @commentable
+    end
+  end
+
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @commentable = @comment.commentable
+    authorize @comment
+    if @comment.destroy
+      redirect_to @commentable
+    end
+  end
+
 
   private
 
   def load_commentable
-    resource, id = request.path.split('/')[1,2]
-    @commentable = resource.singularize.classify.constantize.find(id)
+    @resource, id = request.path.split('/')[1,2]
+    @commentable = @resource.singularize.classify.constantize.find(id)
   end
 
 end

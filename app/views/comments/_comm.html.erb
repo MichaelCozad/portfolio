@@ -1,9 +1,23 @@
-<div id="comments">
+<table id="comments">
   <% @comments.each do |comment| %>
-     <div class="comment">
-     <%= simple_format comment.content %>
-   </div>
+    <tr id="<%= dom_id(comment) %>">
+      <td class="comment">
+        <%= simple_format comment.content %>
+      </td>
+
+      <td>
+      <% if policy(comment).destroy? %>
+        <%= link_to 'Destroy Comment', comment, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
+      <% end %>
+      </td>
+
+      <td>
+      <% if policy(comment).publish? && comment.published? == false %>
+        <%= button_to 'Publish', comment_path(comment, comment: {published: true}), method: :put, :class => "btn btn-success" %>
+      <% end %>
+      </td>
+    </tr>
   <% end %>
-</div>
+</table>
 
 

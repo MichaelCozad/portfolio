@@ -24,6 +24,9 @@ Portfolio::Application.routes.draw do
     resources :comments
   end
 
+  delete '/comments/:id', to: 'comments#destroy', as: 'comment'
+  put '/comments/:id', to: 'comments#update', as: 'comment'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
