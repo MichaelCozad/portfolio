@@ -9,17 +9,16 @@ class CommentsController < ApplicationController
 
 
   def new
-    @comment = @post.comments.new
+    @comment = @commentable.comments.new
   end
 
 
   def create
-    @comment = @post.comments.new(params[:comment])
+    @comment = @commentable.comments.new(params[:comment])
       if @comment.save
-        #current_user.comments << @comment
-        redirect_to post_path(@post), notice: "Comment created."
+        redirect_to @commentable, notice: "Comment created."
       else
-        redirect_to new_post_comment_path(@post)
+        render :new
       end
   end
 

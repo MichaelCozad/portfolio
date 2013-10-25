@@ -36,7 +36,7 @@ feature "CommentOn" do
 
   scenario "I should be able to comment on individual blog posts" do
   #Given a comment was created on a post
-  visit new_post_comment_path(projects(:projed))
+  visit new_project_comment_path(projects(:projed))
 
 
   fill_in "Content", with: "Tommy Boy Rules"

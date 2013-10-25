@@ -14,21 +14,30 @@
     <td><%= post.title %></td>
     <td><%= post.body %></td>
     <td><%= link_to 'Show', post %></td>
-    <% if policy(post).publish? %>
-    <td><%= button_to "Publish", post_path(post, post: {published: true}), method: :put, class: "btn" %> </td>
-    <% end %>
+
+    <td>
     <% if policy(post).update? %>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
     <% end %>
+    </td>
+
+    <td>
     <% if policy(post).destroy? %>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
     <% end %>
+    </td>
+
+    <td>
+    <% if policy(post).publish? && post.published? == false %>
+      <%= button_to 'Publish', post_path(post, post: {published: true}), method: :put, :class => "btn btn-success" %>
+    <% end %>
+    </td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
+<div>
 <% if policy(Post).create? %>
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
 <% end %>
+</div>

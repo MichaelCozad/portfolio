@@ -1,6 +1,6 @@
 <fieldset>
 
-<%= form_for([@post, @comment]) do |f|  %>
+<%= form_for([@commentable, @comment]) do |f|  %>
  <% if @comment.errors.any? %>
  <div id="error_explanation">
   <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this project
@@ -21,7 +21,6 @@
 
   <div class="actions">
     <%= f.submit %>
-    <%= link_to "Cancel", @post, class: 'button' %>
   </div>
 <% end %>
 
