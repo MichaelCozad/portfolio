@@ -34,6 +34,7 @@ group :development, :test do
   gem 'minitest-colorize'
   gem 'capybara-webkit'
   gem 'launchy'
+  gem 'railroady'
 end
 
 group :test do
