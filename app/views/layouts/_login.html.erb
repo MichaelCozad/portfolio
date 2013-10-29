@@ -4,12 +4,16 @@
 
 
 <% if user_signed_in? %>
-  <li>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-  </li>
+  <ul>
+    <li>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
 <% else %>
-  <li>
-  <%= link_to 'Sign in', new_user_session_path  %>
-  <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
-  </li>
+  <ul>
+    <li>
+      <%= link_to 'Sign in', new_user_session_path  %>
+      <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+    </li>
+  </ul>
 <% end %>

@@ -46,7 +46,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-gem 'simplecov', require: false, group: :test
+#gem 'simplecov', require: false, group: :test
 
 gem 'devise'
 

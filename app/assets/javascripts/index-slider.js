@@ -235,6 +235,7 @@ $(document).ready(function () {
     function c() {
         $("#feature_slider").addClass("disabled").append('<ul id="pagination" /><a href="" id="slide-left" /><a href="" id="slide-right" />');
         $("#feature_slider article").each(function () {
+            console.log("adding an li");
             $("#pagination").append('<li><a href="#' + $(this).attr("id") + '">' + $(this).index() + "</a></li>")
         });
         $("#pagination li:first").addClass("active");
