@@ -1,43 +1,53 @@
-<h1>Listing posts</h1>
+<!DOCTYPE html>
+<html>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <h1>Riding the Rails</h1>
+
+
+
+<div class="container">
 
 <% @posts.each do |post| %>
-  <tr id="<%= dom_id(post) %>">
-    <td><%= post.title %></td>
-    <td><%= post.body.html_safe %></td>
-    <td><%= link_to 'Show', post %></td>
+ <div class="col-md-8">
+  <article id="<%= dom_id(post) %>">
+    <div>
+      <h3><%= post.title.html_safe %></h3>
+    </div>
 
-    <td>
-    <% if policy(post).update? %>
-      <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
-    <% end %>
-    </td>
+    <div>
+      <%= post.body.html_safe %>
+    </div>
 
-    <td>
-    <% if policy(post).destroy? %>
-      <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
-    <% end %>
-    </td>
+    <footer>
+      <nav><%= link_to 'Show', post %></nav>
+      <nav>
+        <% if policy(post).update? %>
+          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
+        <% end %>
+      </nav>
 
-    <td>
-    <% if policy(post).publish? && post.published? == false %>
-      <%= button_to 'Publish', post_path(post, post: {published: true}), method: :put, :class => "btn btn-success" %>
-    <% end %>
-    </td>
-  </tr>
-<% end %>
-</table>
+      <nav>
+        <% if policy(post).destroy? %>
+          <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
+        <% end %>
+      </nav>
 
-<div>
-<% if policy(Post).create? %>
-<%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+      <nav>
+        <% if policy(post).publish? && post.published? == false %>
+        <%= button_to 'Publish', post_path(post, post: {published: true}), method: :put, :class => "btn btn-success" %>
+        <% end %>
+      </nav>
+    </footer>
+  </article>
+ </div>
 <% end %>
 </div>
+
+<footer>
+  <div>
+    <% if policy(Post).create? %>
+      <%= link_to 'New Post', new_post_path, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</footer>
+</html>

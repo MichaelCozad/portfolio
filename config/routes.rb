@@ -27,6 +27,8 @@ Portfolio::Application.routes.draw do
   delete '/comments/:id', to: 'comments#destroy', as: 'comment'
   put '/comments/:id', to: 'comments#update', as: 'comment'
 
+  get 'lanslo', :to => 'home#show'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
