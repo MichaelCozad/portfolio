@@ -4,11 +4,9 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    if current_user
-      @posts = policy_scope(Post)
-    else
-      @posts = Post.where(published: true)
-    end
+    @posts = policy_scope(Post)
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
