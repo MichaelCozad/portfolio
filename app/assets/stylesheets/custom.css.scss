@@ -5,8 +5,51 @@
 /* Blog
 -------------------------------------------------- */
 
-//body {
-//  background-image:url('background.jpg');
-//  background-repeat:no-repeat;
-//  background-attachment:fixed;
-//}
+.blogbody {
+  background-image:url('Vintage.png');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}
+
+
+.blogtitle {
+  color: #fbfa9a;
+  text-align: center;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+
+.blopost {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 10px;
+  vertical-align: middle;
+  text-align: left;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  padding-top: 10px;
+  background-color: #fff;
+  width: 670px;
+  border-radius: 10px;
+  opacity: .85;
+  color: #222;
+  border: #eee solid 1px;
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+}
+
+.blopost h3 {
+  vertical-align: middle;
+  text-decoration: underline;
+}
+
+
+
+
+/* Projects
+-------------------------------------------------- */
+.projbody {
+  background-image:url('Proj.png');
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+}

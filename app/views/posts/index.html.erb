@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html>
+<body class="blogbody">
 
-  <h1>Riding the Rails</h1>
 
 
 
 <div class="container">
+  <div class="col-md-8">
+    <h1 class="blogtitle">Riding the Rails</h1>
+  </div>
 
 <% @posts.each do |post| %>
  <div class="col-md-8">
-  <article id="<%= dom_id(post) %>">
-    <div>
-      <h3><%= post.title.html_safe %></h3>
+    <div class="blopost">
+      <article id="<%= dom_id(post) %>">
+        <div>
+          <h3><%= post.title.html_safe %></h3>
+        </div>
+
+        <div>
+          <%= post.body.html_safe %>
+        </div>
+
+        <footer>
+          <nav><%= link_to 'Show', post %></nav>
+          <nav>
+            <% if policy(post).update? %>
+              <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
+            <% end %>
+          </nav>
+
+          <nav>
+            <% if policy(post).destroy? %>
+              <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
+            <% end %>
+          </nav>
+
+          <nav>
+            <% if policy(post).publish? && post.published? == false %>
+            <%= button_to 'Publish', post_path(post, post: {published: true}), method: :put, :class => "btn btn-success" %>
+            <% end %>
+          </nav>
+        </footer>
+      </article>
     </div>
-
-    <div>
-      <%= post.body.html_safe %>
-    </div>
-
-    <footer>
-      <nav><%= link_to 'Show', post %></nav>
-      <nav>
-        <% if policy(post).update? %>
-          <%= link_to 'Edit Post', edit_post_path(post), :class => "btn btn-info" %>
-        <% end %>
-      </nav>
-
-      <nav>
-        <% if policy(post).destroy? %>
-          <%= link_to 'Destroy Post', post, confirm: 'Are you sure?', method: :delete, :class => "btn btn-danger" %>
-        <% end %>
-      </nav>
-
-      <nav>
-        <% if policy(post).publish? && post.published? == false %>
-        <%= button_to 'Publish', post_path(post, post: {published: true}), method: :put, :class => "btn btn-success" %>
-        <% end %>
-      </nav>
-    </footer>
-  </article>
  </div>
 <% end %>
+
 </div>
 
 <footer>
@@ -50,4 +56,5 @@
     <% end %>
   </div>
 </footer>
+</body>
 </html>
