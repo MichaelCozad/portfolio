@@ -14,12 +14,12 @@
             For the backgrounds, you can combine from the bgs folder :D
         -->
         <article class="slide" id="showcasing" style="background: url('/assets/SkylineBlur.jpg') repeat-x top center;">
-            <img class="asset left-30 sp600 t120 z1" src="img/slides/scene1/macbook.png" />
             <div class="info">
-                <h2>Full Stack Rails Developer</h2>
+                <h2>Full Stack </br>
+                    Ruby on Rails Developer</h2>
             </div>
         </article>
-        <article class="slide" id="ideas" style="background: url('/assets/color-splash.jpg') repeat-x top center;">
+        <article class="slide" id="ideas" style="background: url('/assets/aqua.jpg') repeat-x top center;">
             <div class="info">
                 <h2>We love to turn ideas into beautiful things.</h2>
             </div>
@@ -27,7 +27,7 @@
             <img class="asset left-210 sp600 t213 z2" src="img/slides/scene2/middle.png" />
             <img class="asset left60 sp600 t260 z1" src="img/slides/scene2/right.png" />
         </article>
-        <article class="slide" id="tour" style="background: url('/assets/aqua.jpg') repeat-x top center;">
+        <article class="slide" id="tour" style="background: url('/assets/color-splash.jpg') repeat-x top center;">
             <img class="asset left-472 sp650 t210 z3" src="img/slides/scene3/ipad.png" />
             <img class="asset left-365 sp600 t270 z4" src="img/slides/scene3/iphone.png" />
             <img class="asset left-350 sp450 t135 z2" src="img/slides/scene3/desktop.png" />
@@ -49,48 +49,38 @@
         </article>
     </section>
 
-
     <div id="features">
         <div class="container">
             <div class="section_header">
-                <h3>Features</h3>
+                <h3>Blog</h3>
             </div>
             <div class="row feature">
-                <div class="col-sm-6">
-                    <img src="img/showcase1.png" class="img-responsive" />
+                <div class="col-sm-6 info info-left">
+                    <h3>
+                        Rubyist Rhetoric Blog Recent Posts
+                    </h3>
+                    <p>
+                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section_header">
+                <h3>Skills</h3>
+            </div>
+            <div class="row feature">
+                <div class="col-sm-6 info info-left">
+                    <h3>
+                        Rubyist Rhetoric Blog Recent Posts
+                    </h3>
+                    <p>
+                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                    </p>
                 </div>
                 <div class="col-sm-6 info">
                     <h3>
                         <img src="img/features-ico1.png" />
                         Beautiful on all devices
-                    </h3>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                    </p>
-                </div>
-            </div>
-            <div class="row feature">
-                <div class="col-sm-6 pic-right">
-                    <img src="img/showcase2.png" class="pull-right img-responsive" />
-                </div>
-                <div class="col-sm-6 info info-left">
-                    <h3>
-                        <img src="img/features-ico2.png" />
-                        Blog page included
-                    </h3>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
-                    </p>
-                </div>
-            </div>
-            <div class="row feature">
-                <div class="col-sm-6">
-                    <img src="img/showcase3.png" class="img-responsive" />
-                </div>
-                <div class="col-sm-6 info">
-                    <h3>
-                        <img src="img/features-ico3.png" />
-                        Simple and clean coming soon page
                     </h3>
                     <p>
                         There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
@@ -112,10 +102,10 @@
                     <!-- Feature -->
                     <div class="col-sm-4 feature first">
                         <div class="img_box">
-                          <img src="img/service1.png">
+                          <%= image_tag("about.png") %>
                         </div>
                         <div class="text">
-                            <h6>Responsive theme</h6>
+                            <h6>About Me?</h6>
                             <p>
                                 There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
                             </p>
@@ -124,35 +114,28 @@
                     <!-- Feature -->
                     <div class="col-sm-4 feature">
                         <div class="img_box">
-                            <a href="services.html">
-                                <img src="img/service2.png">
-                                <span class="circle">
-                                    <span class="plus">&#43;</span>
-                                </span>
-                            </a>
+                          <%= image_tag("experience.png") %>
                         </div>
                         <div class="text">
-                            <h6>Easy customization</h6>
+                            <h6>Professional Experience</h6>
                             <p>
-                                There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
+                                For details on my professional background, please visit my
+                                <a href="http://www.linkedin.com/pub/michael-frankenfield/83/aa/876" target="_blank">LinkedIn </a>
+                                profile for the most up to date information or view my
+                                <a href="resume.pdf" target="_blank">Resume</a>.
                             </p>
                         </div>
                     </div>
                     <!-- Feature -->
                     <div class="col-sm-4 feature last">
                         <div class="img_box">
-                            <a href="services.html">
-                                <img src="img/service3.png">
-                                <span class="circle">
-                                    <span class="plus">&#43;</span>
-                                </span>
-                            </a>
+                          <%= image_tag("tmlogo.png") %>
                         </div>
                         <div class="text">
                             <h6>Personal Interests</h6>
                             <p>
                               <ul>
-                                <li><a href="http://www.tm.org/">Transcendental Meditation</a></li>
+                                <li><a href="http://www.tm.org/" target="_blank">Transcendental Meditation</a></li>
                                 <li>Running</li>
                                 <li>Hiking</li>
                                 <li>Yoga</li>
