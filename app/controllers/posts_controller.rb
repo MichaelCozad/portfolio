@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = policy_scope(Post)
+    @posts = policy_scope(Post).paginate(page: params[:page])
 
 
     respond_to do |format|

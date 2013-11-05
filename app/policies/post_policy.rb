@@ -28,9 +28,9 @@ attr_reader :user, :post
   Scope = Struct.new(:user, :scope) do
     def resolve
       if user.present? && user.editor?
-        scope.all
+        scope
       elsif user.present? && user.author?
-        scope.where(author_id: user.id) | scope.published
+        scope.where("author_id = ? OR published = ?", user.id, true)
       else
         scope.where(published: true)
       end

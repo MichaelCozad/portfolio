@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
 
   scope :published, where(published: true)
 
+  self.per_page = 8
+
   def publish!
     self.published = true
     save!
