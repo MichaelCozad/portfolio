@@ -35,6 +35,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'railroady'
+  gem "faker", "~> 1.2.0"
 end
 
 group :test do

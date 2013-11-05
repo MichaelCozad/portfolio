@@ -22,6 +22,10 @@
           <%= post.body.html_safe %>
         </div>
 
+        <div>
+          <%= time_ago_in_words(post.created_at) %>
+        </div>
+
         <footer>
           <nav><%= link_to 'Show', post %></nav>
           <nav>
