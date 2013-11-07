@@ -50,10 +50,34 @@
 -------------------------------------------------- */
 .projbody {
   background-image:url('Proj.png');
-  background-repeat:no-repeat;
+//  background-repeat:no-repeat;
+  background-repeat:repeat-x;
   background-attachment:fixed;
 }
 
+.projitem {
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  top: 10px;
+  vertical-align: middle;
+  text-align: left;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  padding-top: 10px;
+  background-color: #fff;
+  width: 670px;
+  border-radius: 10px;
+  opacity: .85;
+  color: #222;
+  border: #eee solid 1px;
+  padding-bottom: 20px;
+  margin-bottom: 80px;
+}
+
+.projitem h3 {
+  vertical-align: middle;
+  text-decoration: underline;
+}
 
 
 /* Home Index
