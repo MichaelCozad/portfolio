@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
 def index
-  @projects = Project.all
+  @projects = policy_scope(Project)
 end
 
 def new
@@ -10,6 +10,7 @@ end
 
 def create
   @project = Project.new(params[:project])
+  authorize @project
   if @project.save
     flash[:notice] = "Project was successfully added"
     redirect_to @project
@@ -28,11 +29,12 @@ end
 
 def edit
   @project = Project.find(params[:id])
+  authorize @project
 end
 
 def update
   @project = Project.find(params[:id])
-
+  authorize @project
   if @project.update_attributes(params[:project])
      redirect_to @project, notice: "Success"
   else
@@ -43,6 +45,7 @@ end
 
 def destroy
   @project = Project.find(params[:id])
+  authorize @project
   @project.destroy
 end
 
