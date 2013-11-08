@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131108182949) do
+ActiveRecord::Schema.define(:version => 20131108191725) do
 
   create_table "comments", :force => true do |t|
     t.string   "author"
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(:version => 20131108182949) do
     t.boolean  "published"
     t.text     "body"
     t.string   "title"
+    t.string   "img1"
+    t.string   "img2"
+    t.string   "img3"
+    t.string   "img4"
+    t.string   "img5"
+    t.string   "img6"
+    t.string   "img7"
+    t.string   "img8"
   end
 
   create_table "users", :force => true do |t|

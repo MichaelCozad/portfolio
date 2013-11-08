@@ -46,35 +46,29 @@
                     </div>
                 </div>
 
-                <div class="col-sm-5 right_box">
-                    <h2>Awesome portfolio item</h2>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected ones humour, or these random words which don’t look even slightly for believable.</p>
+                <div class="col-sm-7 left_box">
+                    <h2><%= @project.title %></h2>
+                    <div>
+                      <p>
+                        <p> <%= @project.body %></p>
+                      </p>
 
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected ones humour, or these random words which don’t look even slightly for believable. If you are going to use a passage of Lorem Ipsum, you needs to been sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined. There majority have suffered. If you are going to use a passage of Lorem Ipsum, you needs to been sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined.</p>
-                    <p>
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected ones humour, or these random words which don’t look even slightly for believable.</p>
+
+                      <p>
+                        <b>Technologies used:</b>
+                        <p> <%= @project.technologies_used  %></p>
+                      </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <p>
-      <b>Project:</b>
-      <h2><%= @project.name  %></h2>
-    </p>
-
-    <p>
-      <b>Technologies used:</b>
-      <p> <%= @project.technologies_used  %></p>
-    </p>
-
-
+    <nav>
     <%= link_to 'Back', projects_path %>
     <br />
-
+    </nav>
 
   </body>
 </html>
