@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :name, :technologies_used, :published
+  attr_accessible :name, :technologies_used, :published, :title, :body
   has_many :comments, as: :commentable
 
   validates :technologies_used, presence: true
