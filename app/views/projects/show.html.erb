@@ -61,14 +61,28 @@
                     </div>
                 </div>
             </div>
+
+        <div class="nav">
+
+
+
+          <% if policy(@project).update? %>
+          <%= link_to "Edit", edit_project_path(@project) %>
+          <% end %>
+
+          <% if policy(@project).destroy? %>
+          <%= link_to "Destroy", @project, method: :delete, data: { confirm: "Are you sure?" } %>
+          <% end %>
+
+          <% if policy(@project).publish? && @project.published? == false %>
+            <%= button_to 'Publish', project_path(@project, project: {published: true}), method: :put, :class => "btn btn-success" %>
+          <% end %>
+        </div>
+
+          <%= link_to 'Back', projects_path %>
+
         </div>
     </div>
-
-
-    <nav>
-    <%= link_to 'Back', projects_path %>
-    <br />
-    </nav>
 
   </body>
 </html>

@@ -4,49 +4,54 @@
 
 
 
+  <div id="portfolio">
+    <div class="container">
+      <div class="section_header">
+          <h3><font size="32" color="#ffffff">Portfolio</font></h3>
+      </div>
 
 
+      <div class="row">
+        <div class="col-md-12">
+          <% @projects.each do |project|  %>
 
-  <% @projects.each do |project|  %>
-
-  <div class="project" id="<%= dom_id(project)  %>">
-    <h3><%= project.name  %></h3>
-    <p><%= project.technologies_used  %></p>
-
+                <div id="gallery_container">
 
 
-    <div class="nav">
+                  <div class="photo art web">
+                    <div class="project" id="<%= dom_id(project)  %>">
+                      <%= project.img1.html_safe %>
+                      <%= link_to(project, class: "mask") do %>
 
-      <%= link_to "Show", project  %>
+                        <h3><%= project.name  %></h3>
+                        <small><%= project.title %></small>
+                        <div class="more">+</div>
 
-      <% if policy(project).update? %>
-      <%= link_to "Edit", edit_project_path(project) %>
-      <% end %>
+                      <% end %>
+                    </div>
+                  </div>
 
-      <% if policy(project).destroy? %>
-      <%= link_to "Destroy", project, method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
+                </div>
 
-      <% if policy(project).publish? && project.published? == false %>
-        <%= button_to 'Publish', project_path(project, project: {published: true}), method: :put, :class => "btn btn-success" %>
-      <% end %>
+          <% end %>
+        </div>
+      </div>
+
     </div>
-
   </div>
-  <% end %>
+
+
+
 
   <br />
 
+  <footer>
   <div>
   <% if policy(Project).create? %>
   <%= link_to "New project", new_project_path  %>
   <% end %>
   </div>
-
-
-
-
-
+  </footer>
 
   </body>
 </html>
