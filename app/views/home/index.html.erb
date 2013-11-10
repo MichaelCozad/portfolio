@@ -57,10 +57,15 @@
             <div class="row feature">
                 <div class="col-sm-6 info info-left">
                     <h3>
-                        Rubyist Rhetoric Blog Recent Posts
+                      <u>Rubyist Rhetoric Blog Recent Posts</u>
                     </h3>
                     <p>
-                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                      <ul>
+                        <% @posts.each do |post| %>
+                        <li><font   ><%= link_to post.title.html_safe, posts_path %></font></li>
+
+                        <% end %>
+                      </ul>
                     </p>
                 </div>
             </div>
@@ -71,19 +76,22 @@
             <div class="row feature">
                 <div class="col-sm-6 info info-left">
                     <h3>
-                        Rubyist Rhetoric Blog Recent Posts
+                      Restful, Agile, Avid Rubyist
                     </h3>
                     <p>
-                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        Experienced in agile software development and application design.  Passionate and knowledgable Ruby on Rails Developer, with experience on both the Rails
+                        3.x & 4.0 stacks, PostgreSQL, Heroku, Devise, and more.  Cultivated in both test driven and behavior driven development environments leveraging RSpec and Minitest test frameworks.  Crafted several functional Ruby on Rails applications including a cross-platform iOS App with Rails serving as the backend.  Superior interpersonal skills with liaison experience building external relationships.
                     </p>
                 </div>
                 <div class="col-sm-6 info">
                     <h3>
-                        <img src="img/features-ico1.png" />
-                        Beautiful on all devices
+                        <%= image_tag("features-ico1.png") %>
+                        Skills & Keywords
                     </h3>
                     <p>
-                        There are many variations of passages of Lorem Ipsum available, but the randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+                        Ruby on Rails, Ruby, Javascript, HTML5, CSS3, Sass, jQuery, AJAX,
+                        CoffeeScript, Git, Github, Heroku, Sublime Text, RSpec, Minitest,
+                        PostgreSQL, Agile Web Development, Pair Programming, TDD, BDD
                     </p>
                 </div>
             </div>
@@ -107,7 +115,7 @@
                         <div class="text">
                             <h6>About Me?</h6>
                             <p>
-                                I am a Full Stack Ruby on Rails Developer based in Seattle, WA.  In December, I graduated from Code Fellows Ruby in Rails bootcamp.
+                                I am a Full Stack Ruby on Rails Developer with a passion for technology and design, looking to immerse myself into a company where I can be part of a great team while learning and contributing to the code base.
                             </p>
                         </div>
                     </div>
