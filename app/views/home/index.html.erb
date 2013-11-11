@@ -48,17 +48,17 @@
                 <h3>Blog</h3>
             </div>
             <div class="row feature">
-                <div class="col-sm-12 info info-left">
+                <div class="col-sm-12 info-left">
                     <h3>
                       <u>Rubyist Rhetoric Blog Recent Posts</u>
                     </h3>
                     <p>
-                      <ol>
+                      <ul>
                         <% @posts.each do |post| %>
                         <li><%= link_to post.title.html_safe, posts_path %></li>
 
                         <% end %>
-                      </ol>
+                      </ul>
                     </p>
                 </div>
             </div>
