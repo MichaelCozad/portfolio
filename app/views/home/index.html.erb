@@ -55,7 +55,7 @@
                     <p>
                       <ul>
                         <% @posts.each do |post| %>
-                        <li><font   ><%= link_to post.title.html_safe, posts_path %></font></li>
+                        <li><%= link_to post.title.html_safe, posts_path %></li>
 
                         <% end %>
                       </ul>
