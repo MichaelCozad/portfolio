@@ -53,12 +53,10 @@
                       <u>Rubyist Rhetoric Blog Recent Posts</u>
                     </h3>
                     <p>
-                      <ul>
                         <% @posts.each do |post| %>
                         <div><%= link_to post.title.html_safe, posts_path %></div>
 
                         <% end %>
-                      </ul>
                     </p>
                 </div>
             </div>
