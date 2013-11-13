@@ -119,9 +119,9 @@
         transition: opacity .1s linear; }
     #feature_slider .slide#responsive .info {
       position: absolute;
-      top: 80px;
+      top: 20px;
       right: 9%;
-      width: 25%; }
+      width: 35%; }
       #feature_slider .slide#responsive .info h2 {
         color: #fff;
         font-size: 47px;
