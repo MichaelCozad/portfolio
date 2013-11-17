@@ -45,6 +45,7 @@ end
 group :production do
   gem 'pg', '0.12.2'
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
 end
 
 #gem 'simplecov', require: false, group: :test
