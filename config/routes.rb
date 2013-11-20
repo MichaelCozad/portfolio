@@ -1,33 +1,30 @@
 Portfolio::Application.routes.draw do
-  get "comments/index"
-
-  get "comments/new"
-
-
-
-
-  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
-
   root to: 'home#index'
 
 
-  resources :home
+  scope ":locale" do
+    get "comments/index"
 
+    get "comments/new"
 
+    devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
-  resources :posts do
-    resources :comments
+    resources :home
+
+    resources :posts do
+      resources :comments
+    end
+
+    resources :projects do
+      resources :comments
+    end
+
+    delete '/comments/:id', to: 'comments#destroy', as: 'comment'
+    put '/comments/:id', to: 'comments#update', as: 'comment'
+
+    get 'lanslo', :to => 'home#show'
   end
 
-
-  resources :projects do
-    resources :comments
-  end
-
-  delete '/comments/:id', to: 'comments#destroy', as: 'comment'
-  put '/comments/:id', to: 'comments#update', as: 'comment'
-
-  get 'lanslo', :to => 'home#show'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

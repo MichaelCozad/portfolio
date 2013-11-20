@@ -23,7 +23,7 @@
         </div>
         </br>
         <div>
-          <%= post.created_at.strftime("%B %d %Y") %>
+          <span class="timestamp"> at <%=l post.created_at, format: :long %>
         </div>
 
         <footer>
