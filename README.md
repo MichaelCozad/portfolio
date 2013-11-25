@@ -23,6 +23,6 @@ Home page outline with Bootstrap carousel loaded.
 
 
 
- - Created -
-============
-October 2013
+-- Created --
+==============
+ October 2013
