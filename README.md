@@ -22,6 +22,7 @@ Home page outline with Bootstrap carousel loaded.
 ![Day2 Static_Home](gshots/Homepage.png)
 
 
+![Brakeman Report](gshots/brakeman.png)
 
 -- Created --
 ==============

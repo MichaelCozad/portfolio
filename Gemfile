@@ -36,6 +36,7 @@ group :development, :test do
   gem 'launchy'
   gem 'railroady'
   gem "faker", "~> 1.2.0"
+  gem 'brakeman', :require => false
 end
 
 group :test do
@@ -61,6 +62,7 @@ gem 'figaro'
 gem 'will_paginate'
 
 gem 'browser-timezone-rails'
+
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
