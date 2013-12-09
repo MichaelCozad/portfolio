@@ -1,9 +1,6 @@
 Michael Frankenfield's Portfolio App
 ====================================
 
-[![Build Status](https://travis-ci.org/TMfranken/portfolio.png?branch=master)](https://travis-ci.org/TMfranken/portfolio)
-
-
 
 Description
 ===========
